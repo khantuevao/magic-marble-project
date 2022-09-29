@@ -258,7 +258,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 4rem;
     font-family: SGB;
     position: absolute;
     left: 50%;
@@ -274,12 +273,13 @@
     font-family: SGL;
     border-radius: 5rem;
     padding: 1rem 4rem;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 70%);
     color: white;
     border-color: black;
-    opacity: 0.7;
     text-decoration: none;
     margin-top: 1rem;
+    min-width: 8rem;
+    text-align: center;
   }
   
   #overview,
@@ -471,9 +471,13 @@
     }
   
     #text-over-video {
-      font-size: 2.5rem;
+      font-size: 2rem;
       top: 40%;
+    }
 
+    #text-over-video > a {
+      padding: 1rem 2rem;
+      font-size: 1.4rem;
     }
   }
   

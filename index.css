@@ -152,7 +152,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    gap: 0.2rem;
   }
   
   #footer-logos {
@@ -218,7 +218,7 @@
     }
   
     #footer-logos > img {
-      width: 1.8rem;
+      width: 1.6rem;
     }
 
     #footer-mobile {
@@ -308,6 +308,7 @@
     color: black;
     background-color: #d1d5db;
     padding: 2rem 2rem;
+    z-index: 2;
   }
   
   #advantages > div {
@@ -337,12 +338,14 @@
   #utilities {
     color: white;
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   #utilities > div {
     font-size: 2rem;
     font-family: SGB;
-    text-align: center;
     margin-bottom: 2rem;
   }
   
@@ -385,7 +388,7 @@
     }
   
     #text-over-video {
-      font-size: 4rem;
+      font-size: 3.5rem;
       top: 45%;
     }
   
@@ -402,55 +405,41 @@
   
     #overview > div,
     #advantages > div {
-      font-family: SGB;
-      font-size: 4rem;
+      font-size: 3.5rem;
       margin-bottom: 2rem;
     }
   
     #overview > p {
       font-size: 1.6rem;
-      font-family: SGL;
     }
   
     li > div:first-child {
       font-size: 1.8rem;
-      font-family: SGB;
     }
   
     li > div:last-child {
-      font-family: SGL;
       font-size: 1.6rem;
     }
   
     #utilities > div {
-      font-size: 4rem;
-      font-family: SGB;
-      text-align: center;
+      font-size: 3.5rem;
       margin-bottom: 2rem;
     }
   
     #utilities > p {
-      font-family: SGB;
       font-size: 1.6rem;
-      border: 2px solid white;
-      border-radius: 1rem;
-      text-align: center;
-      margin-top: 3rem;
+      min-width: 60rem;
     }
   
     #roadmap > div:first-child {
-      font-size: 4rem;
-      font-family: SGB;
-      margin-bottom: 2rem;
+      font-size: 3.5rem;
     }
   
     #roadmap > div {
       font-size: 1.8rem;
-      font-family: SGB;
     }
   
     #roadmap > p {
-      font-family: SGL;
       font-size: 1.6rem;
     }
   }
@@ -474,6 +463,10 @@
     #text-over-video > a {
       padding: 1rem 2rem;
       font-size: 1.4rem;
+    }
+
+    #roadmap {
+      padding-bottom: 5rem;
     }
   }
   

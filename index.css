@@ -12,11 +12,7 @@
     font-family: SGB;
     src: url(./fonts/spacegrotesk/SpaceGrotesk-Bold.otf);
   }
-  
-  @font-face {
-    font-family: SGR;
-    src: url(./fonts/spacegrotesk/SpaceGrotesk-Regular.otf);
-  }
+ 
   
   html {
     scroll-behavior: smooth;
@@ -85,7 +81,7 @@
     display: flex;
     gap: 0.5rem;
   }
-  
+
   #right-links > a {
     border: none;
     border-radius: 0.5rem;
@@ -299,7 +295,7 @@
   
   #overview > div {
     font-family: SGB;
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 2rem;
   }
   
@@ -316,7 +312,7 @@
   
   #advantages > div {
     font-family: SGB;
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   
   #advantages > ul {
@@ -330,7 +326,7 @@
   
   li > div:first-child {
     font-size: 1.4rem;
-    font-family: SGB;
+    font-family: SGM;
   }
   
   li > div:last-child {
@@ -344,16 +340,16 @@
   }
   
   #utilities > div {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-family: SGB;
     text-align: center;
     margin-bottom: 2rem;
   }
   
   #utilities > p {
-    font-family: SGB;
+    font-family: SGL;
     font-size: 1.2rem;
-    border: 2px solid white;
+    border: 1px solid white;
     border-radius: 1rem;
     text-align: center;
     padding: 1rem;
@@ -366,14 +362,14 @@
   }
   
   #roadmap > div:first-child {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-family: SGB;
     margin-bottom: 2rem;
   }
   
   #roadmap > div {
     font-size: 1.4rem;
-    font-family: SGB;
+    font-family: SGM;
   }
   
   #roadmap > p {

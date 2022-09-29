@@ -12,7 +12,7 @@
     font-family: SGB;
     src: url(./fonts/spacegrotesk/SpaceGrotesk-Bold.otf);
   }
- 
+
   
   html {
     scroll-behavior: smooth;
@@ -76,6 +76,31 @@
     color: white;
     border-bottom: 1px solid black;
   }
+
+  /*Hover effect start*/
+  #center-links > a {
+    position: relative;
+  }
+  
+  #center-links > a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    border-radius: 4px;
+    background-color: white;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+  }
+  
+  #center-links > a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+  /*Hover effect end*/
   
   #right-links {
     display: flex;
@@ -271,11 +296,15 @@
     padding: 1rem 4rem;
     background-color: rgba(0, 0, 0, 70%);
     color: white;
-    border-color: black;
+    border: 1px solid rgba(0, 0, 0, 70%);
     text-decoration: none;
     margin-top: 1rem;
     min-width: 8rem;
     text-align: center;
+  }
+
+  #text-over-video > a:hover {
+    border-color: white ;
   }
   
   #overview,

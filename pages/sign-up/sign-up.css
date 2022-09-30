@@ -20,7 +20,6 @@ html {
 body {
   margin: 0;
   background-color: black;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -29,8 +28,10 @@ body {
 header {
   gap: 0.5rem;
   align-items: center;
-  position: sticky;
-  top: 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   padding: 0.5rem 1rem;
   display: flex;
   justify-content: space-between;
@@ -340,9 +341,16 @@ input {
 
 /*Content mobile styling*/
 @media (max-width: 1000px) {
+  #main-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
   .create-account {
     width: 100%;
-    margin-top: -4rem;
   }
 
   .create-account > h1 {

@@ -343,8 +343,8 @@ input {
 /*Content mobile styling*/
 @media (max-width: 1000px) {
   #main-container {
-    margin-top: 8rem;
-    margin-bottom: 8rem;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
   }
 
   .create-account {

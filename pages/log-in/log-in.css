@@ -299,11 +299,7 @@ footer {
 /*Content mobile styling*/
 @media (max-width: 1000px) {
   #main-container {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    
   }
 
   .log-in {

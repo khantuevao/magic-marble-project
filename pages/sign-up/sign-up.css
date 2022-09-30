@@ -20,6 +20,7 @@ html {
 body {
   margin: 0;
   background-color: black;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -214,7 +215,7 @@ footer {
   justify-content: center;
   align-items: center;
   font-family: SGB;
-  margin-bottom: 32px;
+  margin-bottom: 3rem;
 }
 
 .create-account > h1 {
@@ -342,11 +343,8 @@ input {
 /*Content mobile styling*/
 @media (max-width: 1000px) {
   #main-container {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    margin-top: 8rem;
+    margin-bottom: 8rem;
   }
 
   .create-account {

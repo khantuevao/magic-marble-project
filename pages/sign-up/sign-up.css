@@ -25,6 +25,7 @@ body {
   flex-direction: column;
 }
 
+/*Header styling*/
 header {
   gap: 0.5rem;
   align-items: center;
@@ -70,7 +71,7 @@ header {
 #center-links > a {
   text-decoration: none;
   font-family: SGL;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: white;
   border-bottom: 1px solid black;
 }
@@ -128,30 +129,18 @@ header {
   color: black;
 }
 
-/*Header wide-screen styling*/
-@media (min-width: 1200px) {
-  header {
-    height: 5rem;
-  }
-
-  #company-header {
-    font-size: 1.8rem;
-  }
-
-  #company-header > img {
-    width: 4.5rem;
-    border-radius: 10rem;
-  }
-
-  #right-links > a {
-    font-size: 1.4rem;
-  }
-}
-
 /*Header mobile styling*/
 @media (max-width: 1200px) {
   header {
     padding: 0.5rem;
+  }
+
+  #company-header {
+    font-size: 1rem;
+  }
+
+  #company-header > img {
+    width: 2.5rem;
   }
 
   #center-links {
@@ -167,32 +156,6 @@ footer {
   flex-direction: column;
   align-items: center;
   background-color: black;
-  border-top: 1px solid #292524;
-}
-
-#footer-wide {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.2rem;
-}
-
-#footer-logos {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-#footer-logos > img {
-  transition: 0.4s;
-  width: 1.5rem;
-  cursor: pointer;
-}
-
-#company-footer {
-  font-family: SGB;
-  font-size: 1.2rem;
-  text-decoration: none;
-  color: white;
 }
 
 #footer-mobile {
@@ -210,7 +173,6 @@ footer {
   align-items: center;
   font-family: SGB;
   border-top: 1px solid #292524;
-  margin-top: auto;
   z-index: 1;
 }
 
@@ -231,30 +193,7 @@ footer {
 
 /*Footer wide-screen styling*/
 @media (min-width: 1000px) {
-  footer {
-    font-size: 1.2rem;
-  }
-
-  #company-footer {
-    font-size: 1.4rem;
-  }
-
-  #footer-logos > img {
-    width: 1.6rem;
-  }
-
   #footer-mobile {
-    display: none;
-  }
-}
-
-/*Footer mobile styling*/
-@media (max-width: 1000px) {
-footer {
-  border-top: none;
-}
-
-  #footer-wide {
     display: none;
   }
 }
@@ -274,7 +213,7 @@ footer {
   justify-content: center;
   align-items: center;
   font-family: SGB;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 }
 
 .create-account > h1 {
@@ -286,9 +225,12 @@ footer {
   color: white;
   text-decoration: dashed;
   font-size: 2.2rem;
+  margin: 0;
 }
 
-.email, .username, .password {
+.email,
+.username,
+.password {
   display: flex;
   flex-direction: column;
   width: 405px;
@@ -327,12 +269,6 @@ input {
   align-items: center;
 }
 
-#register-buttons > button:first-child {
-  background-color: rgb(253, 253, 253);
-  color: #292524;
-  margin-bottom: 0;
-}
-
 #or {
   color: white;
   margin: 1rem 0;
@@ -344,7 +280,7 @@ input {
   text-decoration: none;
   width: 400px;
   height: 40px;
-  border: 2px solid rgb(24, 24, 24);
+  border: 1px solid #292524;
   border-radius: 10px;
   background: #292524;
   display: flex;
@@ -352,17 +288,21 @@ input {
   align-items: center;
   padding: 5px;
   margin-bottom: 10px;
-  font-family: SGM, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: SGM, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 500;
   transition: all 0.2s ease-in-out;
   font-size: 1rem;
+}
 
+.glow-button:first-child {
+  background-color: white;
+  border: 1px solid white;
+  color: #292524;
+  margin-bottom: 0;
 }
 
 .glow-button:hover {
-  color: rgba(255, 255, 255, 1);
   box-shadow: 0 5px 15px rgba(213, 209, 215, 0.4);
 }
 
@@ -372,7 +312,11 @@ input {
   margin-left: 0px;
 }
 
-#log-in {
+.glow-button:nth-child(3) > img {
+  margin-right: 0.5rem;
+}
+
+#bottom-link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -382,13 +326,13 @@ input {
   font-size: 1rem;
 }
 
-#log-in > div {
+#bottom-link > div {
   color: darkgray;
   padding: 10px;
   font-family: SGL;
 }
 
-#log-in > a {
+#bottom-link > a {
   color: white;
   font-weight: 400;
   font-family: SGL;
@@ -396,24 +340,26 @@ input {
 
 /*Content mobile styling*/
 @media (max-width: 1000px) {
+  .create-account {
+    width: 100%;
+    margin-top: -4rem;
+  }
+
   .create-account > h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .glow-button {
     width: min(85vw, 400px);
   }
 
-  #log-in {
+  #bottom-link {
     width: min(85vw, 400px);
   }
 
-  .create-account {
-    width: 100%;
-    margin-top: -4rem;
-  }
-
-  .email, .password, .username {
+  .email,
+  .password,
+  .username {
     width: min(85vw, 405px);
   }
 }

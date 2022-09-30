@@ -214,7 +214,7 @@ footer {
   justify-content: center;
   align-items: center;
   font-family: SGB;
-  margin-bottom: 3rem;
+  margin-bottom: 32px;
 }
 
 .create-account > h1 {
@@ -354,7 +354,7 @@ input {
   }
 
   .create-account > h1 {
-    font-size: 1.8rem;
+    font-size: 30px;
   }
 
   .glow-button {
@@ -363,6 +363,7 @@ input {
 
   #bottom-link {
     width: min(85vw, 400px);
+    font-size: 15px;
   }
 
   .email,

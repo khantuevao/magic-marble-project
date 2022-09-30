@@ -214,7 +214,7 @@ footer {
   justify-content: center;
   align-items: center;
   font-family: SGB;
-  margin-bottom: 3rem;
+  margin-bottom: 32px;
 }
 
 .log-in > h1 {
@@ -311,7 +311,7 @@ footer {
   }
 
   .log-in > h1 {
-    font-size: 1.8rem;
+    font-size: 30px;
   }
 
   .glow-button {
@@ -320,5 +320,6 @@ footer {
 
   #bottom-link {
     width: min(85vw, 400px);
+    font-size: 15px;
   }
 }

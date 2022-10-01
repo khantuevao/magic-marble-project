@@ -16,7 +16,6 @@
 body {
   margin: 0;
   background-color: black;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -25,7 +24,7 @@ body {
 header {
   gap: 0.5rem;
   align-items: center;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -162,7 +161,7 @@ footer {
   height: 2rem;
   color: #fafaf9;
   background-color: black;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
@@ -203,8 +202,6 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 6rem;
-  margin-bottom: 3.5rem;
 }
 
 .create-account {
@@ -339,6 +336,13 @@ input {
 
 /*Content mobile styling*/
 @media (max-width: 1000px) {
+#main-container {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-top: 6rem;
+  padding-bottom: 3.5rem;
+}
+
   .create-account {
     width: 100%;
   }

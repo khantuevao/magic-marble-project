@@ -348,9 +348,6 @@ input {
 /*Content mobile styling*/
 @media (max-width: 1200px) {
   #main-container {
-    margin-top: auto;
-    margin-bottom: auto;
-    padding-top: 6rem;
     padding-bottom: 3.5rem;
   }
 

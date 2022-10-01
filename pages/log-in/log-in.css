@@ -314,7 +314,7 @@ footer {
 /*Content mobile styling*/
 @media (max-width: 1200px) {
   #main-container {
-    
+    padding-bottom: 3.5rem;
   }
 
   .log-in {

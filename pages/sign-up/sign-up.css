@@ -113,6 +113,12 @@ header {
   font-family: SGM;
   background-color: #292524;
   color: #fafaf9;
+    transition: all 0.2s ease-in-out;
+}
+
+#right-links > a:hover {
+  box-shadow: 0 5px 15px rgba(213, 209, 215, 0.4);
+
 }
 
 #right-links > a:last-child {

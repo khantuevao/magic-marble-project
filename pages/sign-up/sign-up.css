@@ -346,7 +346,7 @@ input {
 }
 
 /*Content mobile styling*/
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   #main-container {
     margin-top: auto;
     margin-bottom: auto;

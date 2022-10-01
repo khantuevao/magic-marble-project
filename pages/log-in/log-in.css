@@ -22,7 +22,13 @@ body {
   background-color: black;
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 5rem);
+  min-height: calc(100vh - 2rem);
+}
+
+@media (max-width: 1200px) {
+  body {
+    min-height: calc(100vh - 5rem);
+  }
 }
 
 /*Header styling*/
@@ -200,7 +206,7 @@ footer {
 }
 
 /*Footer wide-screen styling*/
-@media (min-width: 1000px) {
+@media (min-width: 1200px) {
   #footer-mobile {
     display: none;
   }
@@ -306,7 +312,7 @@ footer {
 }
 
 /*Content mobile styling*/
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   #main-container {
     
   }

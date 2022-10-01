@@ -13,10 +13,6 @@
   src: url(../../fonts/spacegrotesk/SpaceGrotesk-Bold.otf);
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   margin: 0;
   background-color: black;
@@ -206,8 +202,8 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: auto;
-  margin-bottom: auto;
+  margin-top: 7rem;
+  margin-bottom: 3.5rem;
 }
 
 .create-account {
@@ -342,10 +338,6 @@ input {
 
 /*Content mobile styling*/
 @media (max-width: 1000px) {
-  #main-container {
-    
-  }
-
   .create-account {
     width: 100%;
   }

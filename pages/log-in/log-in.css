@@ -22,6 +22,7 @@ body {
   background-color: black;
   display: flex;
   flex-direction: column;
+  min-height: calc(100vh - 5rem);
 }
 
 /*Header styling*/
@@ -39,6 +40,7 @@ header {
   border-bottom: 1px solid #292524;
   background-color: black;
   z-index: 999;
+  height: 3rem;
 }
 
 #company-header {
@@ -114,6 +116,11 @@ header {
   font-family: SGM;
   background-color: #292524;
   color: #fafaf9;
+  transition: all 0.2s ease-in-out;
+}
+
+#right-links > a:hover {
+  box-shadow: 0 5px 15px rgba(213, 209, 215, 0.4);
 }
 
 #right-links > a:last-child {
@@ -207,6 +214,8 @@ footer {
   align-items: center;
   margin-top: auto;
   margin-bottom: auto;
+  padding-top: 6rem;
+  padding-bottom: 1.5rem;
 }
 
 .log-in {
@@ -254,6 +263,7 @@ footer {
   font-weight: 500;
   transition: all 0.2s ease-in-out;
   font-size: 1rem;
+  cursor: pointer;
 }
 
 .glow-button:hover {
@@ -281,7 +291,6 @@ footer {
   width: 400px;
   margin-top: 10px;
   font-size: 1rem;
-  align-self: center;
 }
 
 #bottom-link > div {

@@ -19,7 +19,6 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-
 }
 
 /*Header styling*/
@@ -113,12 +112,11 @@ header {
   font-family: SGM;
   background-color: #292524;
   color: #fafaf9;
-    transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 #right-links > a:hover {
   box-shadow: 0 5px 15px rgba(213, 209, 215, 0.4);
-
 }
 
 #right-links > a:last-child {
@@ -348,12 +346,12 @@ input {
 
 /*Content mobile styling*/
 @media (max-width: 1000px) {
-#main-container {
-  margin-top: auto;
-  margin-bottom: auto;
-  padding-top: 6rem;
-  padding-bottom: 3.5rem;
-}
+  #main-container {
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-top: 6rem;
+    padding-bottom: 3.5rem;
+  }
 
   .create-account {
     width: 100%;

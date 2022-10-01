@@ -131,6 +131,7 @@ header {
 @media (max-width: 1200px) {
   header {
     padding: 0.5rem;
+    height: 3rem;
   }
 
   #company-header {
@@ -202,7 +203,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 7rem;
+  margin-top: 6rem;
   margin-bottom: 3.5rem;
 }
 

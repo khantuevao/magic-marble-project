@@ -24,7 +24,7 @@ body {
 header {
   gap: 0.5rem;
   align-items: center;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -161,7 +161,7 @@ footer {
   height: 2rem;
   color: #fafaf9;
   background-color: black;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;

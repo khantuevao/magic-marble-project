@@ -14,24 +14,12 @@
         <div>Game rules</div>
         <div id="top-panel-right">
           <div class="wrapper">
-            <div class="toggle_radio">
-              <input
-                type="radio"
-                class="toggle_option"
-                id="first_toggle"
-                name="toggle_option"
-              />
-              <input
-                type="radio"
-                checked
-                class="toggle_option"
-                id="second_toggle"
-                name="toggle_option"
-              />
-              <label for="first_toggle"><p>RU</p></label>
-              <label for="second_toggle"><p>EN</p></label>
-              <div class="toggle_option_slider"></div>
-            </div>
+            <input id="lang-toggle" type="checkbox">
+            <label id="lang" for="lang-toggle">
+                <span></span>
+                <div id="RU">RU</div>
+                <div id="EN">EN</div>
+            </label>
           </div>
           <svg
             id="music"
@@ -56,16 +44,8 @@
             <div class="name">Player 2</div>
             <div class="role">Guesser</div>
         </div>
-        <div class="marbles-num"><div>20</div></div>
+        <div class="marbles-num"><div>12</div></div>
         <div class="marbles-img">
-            <div class="marble"></div>
-            <div class="marble"></div>
-            <div class="marble"></div>
-            <div class="marble"></div>
-            <div class="marble"></div>
-            <div class="marble"></div>
-            <div class="marble"></div>
-            <div class="marble"></div>
             <div class="marble"></div>
             <div class="marble"></div>
             <div class="marble"></div>
@@ -80,7 +60,26 @@
             <div class="marble"></div>
         </div>
     </div>
-    <div id="layer-p1"></div>
+    <div id="layer-p1">
+        <div class="info">
+            <div class="name">Player 1</div>
+            <div class="role">Hider</div>
+        </div>
+        <div class="marbles-num"><div>8</div></div>
+        <div class="marbles-img">
+            <div class="marble"></div>
+            <div class="marble"></div>
+            <div class="marble"></div>
+            <div class="marble"></div>
+            <div class="marble"></div>
+            <div class="marble"></div>
+            <div class="marble"></div>
+            <div class="marble"></div>
+        </div>
+    </div>
+    <div id="layer-bet">
+        
+    </div>
     <div id="layer-chat"></div>
   </body>
 </html>

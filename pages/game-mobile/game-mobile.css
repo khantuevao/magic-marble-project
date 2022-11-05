@@ -208,7 +208,7 @@ body {
 }
 
 #layer-bet {
-  height: 10rem;
+  height: ;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -286,6 +286,7 @@ body {
 #bet-ticks {
   display: flex;
   gap: 0.5rem;
+  margin-top: -1.5rem;
 }
 
 .tick {
@@ -311,7 +312,6 @@ body {
 
 .ticked > div:last-child {
   transform: scale(1);
-
 }
 
 .number {
@@ -322,3 +322,17 @@ body {
   font-weight: 900;
 }
 
+button {
+  width: 11rem;
+  height: 2rem;
+  border: none;
+  border-radius: 0.3rem;
+  background: linear-gradient(to right, #D55219, #D67419);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem 0 1rem;
+}

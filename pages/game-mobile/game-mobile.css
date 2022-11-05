@@ -2,37 +2,54 @@
     font-family: BA;
     src: url(../../fonts/bruno-ace/Bruno\ Ace\ Regular.ttf);
   }
+
+  @font-face {
+    font-family: Inter;
+    src: url(../../fonts/Inter/Inter-VariableFont_slnt\,wght.ttf);
+  }
+
 body {
     background-color: #0E1232;
     min-height: 100vh;
     padding: 0;
     margin: 0;
+    font-family: Inter;
 }
 
 #top-panel {
-    color: white;
+    color: #D9D9D9;
     display: flex;
     align-items: center;
-    margin: 1rem 2rem;
+    margin: 1rem;
     width: 100%;
 }
 
 #top-panel > div:first-child {
     font-size: 0.8rem;
-    margin-left: 1rem;
+    margin-left: 1.5rem;
 }
 
 #top-panel-right {
     display: flex;
     gap: 0.5rem;
     margin-left: auto;
-    margin-right: 1rem;
+    margin-right: 0.8rem;
+}
+
+#music {
+    color: #D9D9D9;
+    align-self: center;
+    transition: .4s ease;
+}
+
+#music.playing {
+    color: rgb(94, 94, 94);
 }
 
 #top-header {
     color: #8B30D2;
     font-family: BA;
-    font-size: 2.3rem;
+    font-size: 2.175rem;
 }
 
 #layer-top {
@@ -45,17 +62,7 @@ body {
 #layer-top > img {
     width: 241px;
     margin-top: -2rem;
-   
 }
-
-#layer-p2 {
-    background-color: #1C2258;
-    height: 30rem;
-    border-top-left-radius: 2rem;
-    border-top-right-radius: 2rem;
-    margin-top: -1rem;
-}
-
 
 
 /* radio slider styling */
@@ -78,7 +85,7 @@ body {
   border-radius: 50px;
   position: relative;
   height: 1.5rem;
-  width: 2.8rem;
+  width: 3.2rem;
 }
 .toggle_radio > * {
   float: left;
@@ -88,14 +95,14 @@ body {
   /*position: fixed;*/
 }
 .toggle_radio label{
-  font-size: 0.7rem;
-  color: white;
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: #D9D9D9;
   z-index: 0;
   display: block;
-  width: 1.3rem;
-  height: 1.5px;
-  margin: 0.4rem 0;
-  margin-left: 0.05rem;
+  width: 1rem;
+  margin: 0.3rem 0;
+  margin-left: 0.35rem;
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
   border-radius: 50px;
@@ -107,6 +114,7 @@ body {
   /*background: blue;*/ /*make it blue*/
 }
 .toggle_option_slider{
+    
   /*display: none;*/
   /*background: red;*/
   width: 1.3rem;
@@ -124,10 +132,75 @@ body {
 }
 
 #first_toggle:checked ~ .toggle_option_slider{
-  background: white;
-  left: 0.1rem;
+  background: #D9D9D9;
+  left: 0.2rem;
 }
 #second_toggle:checked ~ .toggle_option_slider{
-  background: white;
-  left: 1.4rem;
+  background: #D9D9D9;
+  left: 1.7rem;
+}
+
+
+#layer-p2 {
+  background-color: #1C2258;
+  height: 6rem;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  margin-top: -1rem;
+  padding: 1.5rem;
+  color: #D9D9D9;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.name {
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+.role {
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: #3FA0BF;
+}
+
+.marbles-num {
+  font-size: 2.5rem;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.marbles-num > div {
+  margin-top: -0.5rem;
+}
+
+.marbles-img {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.1rem;
+  height: 5.1rem;
+}
+
+.marble {
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: #D9D9D9;
+  border-radius: 1rem;
+  display: inline-block;
+}
+
+#layer-p1 {
+  background-color: #0E1232;
+  height: 15rem;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  margin-top: -1rem;
 }

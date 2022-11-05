@@ -340,7 +340,8 @@ button {
   background-color: #1C2258;
   width: 90vw;
   height: 6rem;
-  border-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
   align-self: center;
   color: #5762C5;
   font-size: 0.8rem;

@@ -66,79 +66,62 @@ body {
 }
 
 
-/* radio slider styling */
-*{
-  margin:0px;
-  padding:0px;
+/* language toggle */
+#lang {
+	color: transparent;
+	background-color: #3B25A8;
+	border-radius: 14px;
+	display: block;
+	position: relative;
+	text-indent: 100%;
+	width: 3.2rem; height: 1.5rem;
+	-webkit-transition: background-position .3s ease;
+	-moz-transition: background-position .3s ease;
+	cursor: pointer;
+	font-size: .01em;
+	float: left;
 }
 
-.wrapper {
-  margin:  0;
+#lang-toggle {
+	display: none;
 }
-.toggle_radio{
-  position: relative;
-  background: #3B25A8;
-  margin: 4px auto;
-  overflow: hidden;
-  padding: 0 !important;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  border-radius: 50px;
-  position: relative;
-  height: 1.5rem;
-  width: 3.2rem;
+
+#lang span {
+	background-color: #D9D9D9;
+	border: 0px solid transparent;
+	border-radius: 14px;
+	content: "";
+	display: block;
+	position: absolute; top: 0.1rem; left: 0.2rem;
+	width: 1.3rem; height: 1.3rem;
+	-webkit-transition: left .3s ease;
+	-moz-transition: left .3s ease;
 }
-.toggle_radio > * {
-  float: left;
-}
-.toggle_radio input[type=radio]{
-  display: none;
-  /*position: fixed;*/
-}
-.toggle_radio label{
-  font-size: 0.8rem;
-  font-weight: 900;
+
+#ru {
   color: #D9D9D9;
-  z-index: 0;
-  display: block;
-  width: 1rem;
-  margin: 0.3rem 0;
-  margin-left: 0.35rem;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  border-radius: 50px;
-  cursor: pointer;
-  z-index: 1;
-  /*background: rgba(0,0,0,.1);*/
-  text-align: center;
-  /*margin: 0 2px;*/
-  /*background: blue;*/ /*make it blue*/
-}
-.toggle_option_slider{
-    
-  /*display: none;*/
-  /*background: red;*/
-  width: 1.3rem;
-  height: 1.3rem;
+  font-size: 0.7rem;
+  font-weight: 900;
   position: absolute;
-  top: 0.1rem;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  border-radius: 50px;
-  -webkit-transition: all .4s ease;
-  -moz-transition: all .4s ease;
-  -o-transition: all .4s ease;
-  -ms-transition: all .4s ease;
-  transition: all .4s ease;
+  top: 0.3rem;
+  left: -0.5rem;
 }
 
-#first_toggle:checked ~ .toggle_option_slider{
-  background: #D9D9D9;
-  left: 0.2rem;
+#en {
+  color: #D9D9D9;
+  font-size: 0.7rem;
+  font-weight: 900;
+  position: absolute;
+  top: 0.3rem;
+  left: 0.8rem;
 }
-#second_toggle:checked ~ .toggle_option_slider{
-  background: #D9D9D9;
-  left: 1.7rem;
+
+#lang-toggle:checked + #lang {
+	background-position: 0 0;
+}
+
+#lang-toggle:checked + #lang span {
+	left: 1.7rem;
 }
 
 
@@ -219,18 +202,21 @@ body {
 
 #layer-bet {
   height: 10rem;
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
 }
 
 
-
-#lang {
+/* bet toggle */
+#bet {
 	color: transparent;
-	background-color: #3B25A8;
+	background: linear-gradient(#38239F, #6D25A6);
 	border-radius: 14px;
 	display: block;
 	position: relative;
 	text-indent: 100%;
-	width: 3.2rem; height: 1.5rem;
+	width: 6rem; height: 1.6rem;
 	-webkit-transition: background-position .3s ease;
 	-moz-transition: background-position .3s ease;
 	cursor: pointer;
@@ -238,44 +224,44 @@ body {
 	float: left;
 }
 
-#lang-toggle {
+#bet-toggle {
 	display: none;
 }
 
-#lang span {
+#bet span {
 	background-color: #D9D9D9;
 	border: 0px solid transparent;
 	border-radius: 14px;
 	content: "";
 	display: block;
-	position: absolute; top: 0.1rem; left: 0.2rem;
+	position: absolute; top: 0.15rem; left: 0.2rem;
 	width: 1.3rem; height: 1.3rem;
 	-webkit-transition: left .3s ease;
 	-moz-transition: left .3s ease;
 }
 
-#RU {
+#even {
   color: #D9D9D9;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 900;
   position: absolute;
   top: 0.3rem;
-  left: -0.5rem;
+  left: -4.5rem;
 }
 
-#EN {
+#odd {
   color: #D9D9D9;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 900;
   position: absolute;
   top: 0.3rem;
-  left: 0.8rem;
+  left: 5rem;
 }
 
-#lang-toggle:checked + #lang {
+#bet-toggle:checked + #bet {
 	background-position: 0 0;
 }
 
-#lang-toggle:checked + #lang span {
-	left: 1.7rem;
+#bet-toggle:checked + #bet span {
+	left: 4.5rem;
 }

@@ -46,6 +46,12 @@ tickOne.addEventListener('click', () => {
         tickTwo.classList.remove('ticked')
         tickThree.classList.remove('ticked')
         tickFour.classList.remove('ticked')
+        tickFive.classList.remove('ticked')
+        tickSix.classList.remove('ticked')
+        tickSeven.classList.remove('ticked')
+        tickEight.classList.remove('ticked')
+        tickNine.classList.remove('ticked')
+        tickTen.classList.remove('ticked')
     } else {
         tickOne.classList.add('ticked')
     }

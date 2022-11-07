@@ -382,15 +382,35 @@ button {
   display: flex;
   align-items: center;
   position: absolute;
-  width: 90vw;
+  width: 100%;
   border-radius: 0.5rem;
   top: 13rem;
   background-color: #1C2258;
 }
 
 .chat-prompt.visible > div {
-  margin: 0.8rem 0.5rem;
+  width: 100%;
+  display: flex;
 }
+
+.chat-prompt.visible > div > input {
+  background: none;
+  border: none;
+  color: #5762C5;
+  width: 100%;
+  margin: 0.5rem 0.5rem;
+
+}
+
+.chat-prompt.visible > div > input:focus {
+  outline: none;
+}
+
+.chat-prompt.visible > div > input::placeholder {
+  color: #5762C5;
+}
+
+
 
 .hidden {
   display: none;
@@ -399,3 +419,4 @@ button {
 .rotate {
   transform: rotate(180deg);
 }
+

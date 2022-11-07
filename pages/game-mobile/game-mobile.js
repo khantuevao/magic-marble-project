@@ -227,13 +227,13 @@ function checkDirection() {
   if (touchEndY < touchStartY) {
     layerChat.classList.add('up')
     chatPrompt.classList.add('visible')
-    swipeInfo.classList.add('hidden')
+    swipeInfo.classList.add('none')
     swipeImg.classList.add('rotate')
   }
   if (touchEndY > touchStartY) {
     layerChat.classList.remove('up')
     chatPrompt.classList.remove('visible')
-    swipeInfo.classList.remove('hidden')
+    swipeInfo.classList.remove('none')
     swipeImg.classList.remove('rotate')
   }
 }

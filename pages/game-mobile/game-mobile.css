@@ -372,16 +372,17 @@ button {
   margin-top: -10rem;
   height: 12rem;
   border-radius: 0.5rem;
+  position: fixed;
 }
 
 .chat-prompt {
   display: none;
+  position: absolute;
 }
 
 .chat-prompt.visible {
   display: flex;
   align-items: center;
-  position: absolute;
   width: 100%;
   border-radius: 0.5rem;
   top: 13rem;
@@ -413,7 +414,7 @@ button {
 
 
 
-.hidden {
+.none {
   display: none;
 }
 

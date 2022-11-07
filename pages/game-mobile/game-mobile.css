@@ -124,7 +124,7 @@ body {
 }
 
 #lang-toggle:checked + #lang span {
-	left: 1.8rem;
+	left: 1.9rem;
 }
 
 .hidden {
@@ -243,7 +243,7 @@ body {
 	border-radius: 14px;
 	content: "";
 	display: block;
-	position: absolute; top: 0.125rem; left: 0.2rem;
+	position: absolute; top: 0.16rem; left: 0.2rem;
 	width: 1.2rem; height: 1.2rem;
 	-webkit-transition: left .3s ease;
 	-moz-transition: left .3s ease;
@@ -336,10 +336,8 @@ button {
 }
 
 #layer-chat {
-  margin-top: 1.5rem;
   background-color: #1C2258;
   width: 90vw;
-  height: 6rem;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
   align-self: center;
@@ -358,4 +356,18 @@ button {
 #layer-chat > div {
   width: 7rem;
   text-align: center;
+}
+
+.down {
+  margin-top: 1.5rem;
+  height: 6rem;
+  transition: 0.3s ease;
+  z-index: 5;
+
+}
+
+.up {
+  margin-top: -10rem;
+  height: 17.5rem;
+  position: relative;
 }

@@ -211,3 +211,29 @@ tickTen.addEventListener('click', () => {
     }
     betRange.value = 10
 })
+
+
+//swipe controller
+
+const layerChat = document.getElementById('layer-chat')
+
+let touchStartY = 0
+let touchEndY = 0
+    
+function checkDirection() {
+  if (touchEndY < touchStartY) {
+    layerChat.classList.add('up')
+  }
+  if (touchEndY > touchStartY) {
+    layerChat.classList.remove('up')
+  }
+}
+
+layerChat.addEventListener('touchstart', e => {
+  touchStartY = e.changedTouches[0].screenY
+})
+
+layerChat.addEventListener('touchend', e => {
+  touchEndY = e.changedTouches[0].screenY
+  checkDirection()
+})

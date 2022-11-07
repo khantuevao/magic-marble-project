@@ -386,6 +386,7 @@ button {
   border-radius: 0.5rem;
   top: 13rem;
   background-color: #1C2258;
+  margin-bottom: 2rem;
 }
 
 .chat-prompt.visible > div {

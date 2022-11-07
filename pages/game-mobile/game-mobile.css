@@ -346,21 +346,23 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
-#layer-chat > img {
+.swipe-img {
   width: 1.2rem;
   margin: 0.5rem;
 }
 
-#layer-chat > div {
+.swipe-info {
+  display: flex;
   width: 7rem;
   text-align: center;
 }
 
 .down {
   margin-top: 1.5rem;
-  height: 6rem;
+  height: 5.8rem;
   transition: 0.3s ease;
   z-index: 5;
 
@@ -368,6 +370,32 @@ button {
 
 .up {
   margin-top: -10rem;
-  height: 17.5rem;
-  position: relative;
+  height: 12rem;
+  border-radius: 0.5rem;
+}
+
+.chat-prompt {
+  display: none;
+}
+
+.chat-prompt.visible {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 90vw;
+  border-radius: 0.5rem;
+  top: 13rem;
+  background-color: #1C2258;
+}
+
+.chat-prompt.visible > div {
+  margin: 0.8rem 0.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.rotate {
+  transform: rotate(180deg);
 }

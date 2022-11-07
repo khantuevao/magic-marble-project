@@ -216,6 +216,9 @@ tickTen.addEventListener('click', () => {
 //swipe controller
 
 const layerChat = document.getElementById('layer-chat')
+const chatPrompt = document.querySelector('.chat-prompt')
+const swipeInfo = document.querySelector('.swipe-info')
+const swipeImg = document.querySelector('.swipe-img')
 
 let touchStartY = 0
 let touchEndY = 0
@@ -223,9 +226,15 @@ let touchEndY = 0
 function checkDirection() {
   if (touchEndY < touchStartY) {
     layerChat.classList.add('up')
+    chatPrompt.classList.add('visible')
+    swipeInfo.classList.add('hidden')
+    swipeImg.classList.add('rotate')
   }
   if (touchEndY > touchStartY) {
     layerChat.classList.remove('up')
+    chatPrompt.classList.remove('visible')
+    swipeInfo.classList.remove('hidden')
+    swipeImg.classList.remove('rotate')
   }
 }
 

@@ -1,15 +1,61 @@
-const music = document.getElementById('music');
-
-music.addEventListener('click', () => {
-    turnMusic();
+//language controller
+const langToggle = document.getElementById('lang-toggle');
+langToggle.addEventListener('click', () => {
+    switchLang()
 })
 
-function turnMusic() {
-    music.classList.toggle('playing')
+let language = 'EN';
+
+function switchLang() {
+    const ru = document.getElementById('ru')
+    const en = document.getElementById('en')
+
+    if (langToggle.checked === true) {
+        ru.classList.remove('hidden')
+        en.classList.add('hidden')
+        language = 'RU'
+        updateLink()
+    } else {
+        en.classList.remove('hidden')
+        ru.classList.add('hidden')
+        language = 'EN'
+        updateLink()
+    }
+}
+
+function changeLanguage() {
+  if (language === 'EN') {
+    language = 'RU'
+  } else {
+    language = 'EN'
+  }
+}
+
+//rules controller
+function updateLink() {
+    if (language === 'EN') {
+        rules.setAttribute('href', '#rulesEN')
+    } else {
+        rules.setAttribute('href', '#rulesRU')
+    }
 }
 
 
+//music controller
+const play = document.getElementById('play');
 
+play.onclick = () => {
+    play.classList.toggle('on')
+    play.classList.contains('on')? music.play() : music.pause()
+}
+
+const music = document.getElementById('music')
+
+
+
+
+
+//bets controller
 const betRange = document.getElementById('bet-range')
 
 const tickOne = document.querySelector('.tick.one')
@@ -196,7 +242,6 @@ tickTen.addEventListener('click', () => {
 
 
 //swipe controller
-
 const layerChat = document.getElementById('layer-chat')
 const chatPrompt = document.querySelector('.chat-prompt')
 const swipeInfo = document.querySelector('.swipe-info')
@@ -230,50 +275,6 @@ layerChat.addEventListener('touchend', e => {
 })
 
 
-//language controller
-const langToggle = document.getElementById('lang-toggle');
-langToggle.addEventListener('click', () => {
-    switchLang()
-})
-
-let language = 'EN';
-
-
-function switchLang() {
-    const ru = document.getElementById('ru')
-    const en = document.getElementById('en')
-
-    if (langToggle.checked === true) {
-        ru.classList.remove('hidden')
-        en.classList.add('hidden')
-        language = 'RU'
-        updateLink()
-    } else {
-        en.classList.remove('hidden')
-        ru.classList.add('hidden')
-        language = 'EN'
-        updateLink()
-    }
-}
-
-
-
-function changeLanguage() {
-  if (language === 'EN') {
-    language = 'RU'
-  } else {
-    language = 'EN'
-  }
-}
-
-//rules controller
-function updateLink() {
-    if (language === 'EN') {
-      rules.setAttribute('href', '#rulesEN')
-    } else {
-      rules.setAttribute('href', '#rulesRU')
-    }
-  }
 
   window.addEventListener('load', (event) => {
     updateLink()

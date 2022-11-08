@@ -5,6 +5,7 @@ const langToggle = document.getElementById('lang-toggle');
 langToggle.addEventListener('click', () => {
     switchLang()
     updateLink()
+    updateLanguage()
 })
 
 function switchLang() {
@@ -19,6 +20,37 @@ function switchLang() {
         en.classList.remove('hidden')
         ru.classList.add('hidden')
         language = 'EN'
+    }
+}
+
+const rules = document.getElementById('rules')
+const guesser = document.querySelector('.guesser')
+const hider = document.querySelector('.hider')
+const even = document.getElementById('even')
+const odd = document.getElementById('odd')
+const submit = document.getElementById('submit')
+const text = document.getElementById('text')
+
+function updateLanguage() {
+    if (language === 'EN') {
+        rules.innerHTML = 'Game rules'
+        guesser.innerHTML = 'Guesser'
+        hider.innerHTML = 'Hider'
+        even.innerHTML = 'Even'
+        odd.innerHTML = 'Odd'
+        submit.innerHTML = 'Submit'
+        swipeInfo.innerHTML = 'Swipe up to see history and chat'
+        text.setAttribute('placeholder', 'Tap to send a message')
+    } else {
+        rules.innerHTML = 'Правила игры'
+        guesser.innerHTML = 'Отгадывающий'
+        hider.innerHTML = 'Загадывающий'
+        even.innerHTML = 'Четное'
+        odd.innerHTML = 'Нечетное'
+        submit.innerHTML = 'Отправить'
+        swipeInfo.innerHTML = 'Смахните вверх, чтобы увидеть историю и чат'
+        text.setAttribute('placeholder', 'Нажмите, чтобы отправить сообщение')
+
     }
 }
 

@@ -45,7 +45,7 @@
             </div>
           </div>
         <div id="top-panel-right">
-          <div class="wrapper">
+          <div>
             <input id="lang-toggle" type="checkbox" />
             <label id="lang" for="lang-toggle">
               <span></span>
@@ -76,7 +76,7 @@
     <div id="layer-p2">
       <div class="info">
         <div class="name">Player 2</div>
-        <div class="role">Guesser</div>
+        <div class="role guesser">Guesser</div>
       </div>
       <div class="marbles-num"><div>12</div></div>
       <div class="marbles-img">
@@ -97,7 +97,7 @@
     <div id="layer-p1">
       <div class="info">
         <div class="name">Player 1</div>
-        <div class="role">Hider</div>
+        <div class="role hider">Hider</div>
       </div>
       <div class="marbles-num"><div>8</div></div>
       <div class="marbles-img">
@@ -116,9 +116,9 @@
         <input id="bet-toggle" type="checkbox" />
         <label id="bet" for="bet-toggle">
           <span></span>
-          <div id="even">Even</div>
-          <div id="odd">Odd</div>
         </label>
+        <div id="even">Even</div>
+        <div id="odd">Odd</div>
       </div>
       <input
         id="bet-range"
@@ -182,13 +182,13 @@
           <div></div>
         </div>
       </div>
-      <button>Submit</button>
+      <button id="submit">Submit</button>
     </div>
     <div id="layer-chat" class="down">
       <img class="swipe-img" src="../../icons/arrow.svg" alt="" />
-      <div class="swipe-info">Swipe up to history and chat</div>
+      <div class="swipe-info">Swipe up to see history and chat</div>
       <div class="chat-prompt">
-        <div><input type="text" placeholder="Tap to send a message" /></div>
+        <div><input id="text" type="text" placeholder="Tap to send a message" /></div>
       </div>
     </div>
 

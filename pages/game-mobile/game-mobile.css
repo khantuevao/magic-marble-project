@@ -289,12 +289,15 @@ ul {
 
 
 /* bet toggle */
+.wrapper {
+  position: relative;
+}
+
 #bet {
 	color: transparent;
 	background: linear-gradient(to right, #38239F, #6D25A6);
 	border-radius: 14px;
 	display: block;
-	position: relative;
 	text-indent: 100%;
 	width: 6rem; height: 1.5rem;
 	-webkit-transition: background-position .3s ease;
@@ -325,7 +328,8 @@ ul {
   font-weight: 900;
   position: absolute;
   top: 0.3rem;
-  left: -4.5rem;
+  right: 6rem;
+  padding-right: 1rem;
 }
 
 #odd {
@@ -334,7 +338,8 @@ ul {
   font-weight: 900;
   position: absolute;
   top: 0.3rem;
-  left: 5rem;
+  left: 6rem;
+  padding-left: 1rem;
 }
 
 #bet-toggle:checked + #bet {

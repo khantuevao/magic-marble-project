@@ -8,25 +8,7 @@ function turnMusic() {
     music.classList.toggle('playing')
 }
 
-const langToggle = document.getElementById('lang-toggle');
-langToggle.addEventListener('click', () => {
-    switchLang()
-})
 
-function switchLang() {
-    const ru = document.getElementById('ru')
-    const en = document.getElementById('en')
-
-    if (langToggle.checked === true) {
-        ru.classList.remove('hidden')
-        en.classList.add('hidden')
-    } else {
-        en.classList.remove('hidden')
-        ru.classList.add('hidden')
-    }
-}
-
-switchLang()
 
 const betRange = document.getElementById('bet-range')
 
@@ -246,3 +228,54 @@ layerChat.addEventListener('touchend', e => {
   touchEndY = e.changedTouches[0].screenY
   checkDirection()
 })
+
+
+//language controller
+const langToggle = document.getElementById('lang-toggle');
+langToggle.addEventListener('click', () => {
+    switchLang()
+})
+
+let language = 'EN';
+
+
+function switchLang() {
+    const ru = document.getElementById('ru')
+    const en = document.getElementById('en')
+
+    if (langToggle.checked === true) {
+        ru.classList.remove('hidden')
+        en.classList.add('hidden')
+        language = 'RU'
+        updateLink()
+    } else {
+        en.classList.remove('hidden')
+        ru.classList.add('hidden')
+        language = 'EN'
+        updateLink()
+    }
+}
+
+
+
+function changeLanguage() {
+  if (language === 'EN') {
+    language = 'RU'
+  } else {
+    language = 'EN'
+  }
+}
+
+//rules controller
+function updateLink() {
+    if (language === 'EN') {
+      rules.setAttribute('href', '#rulesEN')
+    } else {
+      rules.setAttribute('href', '#rulesRU')
+    }
+  }
+
+  window.addEventListener('load', (event) => {
+    updateLink()
+    switchLang()
+  })

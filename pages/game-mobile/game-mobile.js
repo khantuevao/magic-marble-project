@@ -1,10 +1,11 @@
 //language controller
+let language = 'EN';
+
 const langToggle = document.getElementById('lang-toggle');
 langToggle.addEventListener('click', () => {
     switchLang()
+    updateLink()
 })
-
-let language = 'EN';
 
 function switchLang() {
     const ru = document.getElementById('ru')
@@ -14,22 +15,13 @@ function switchLang() {
         ru.classList.remove('hidden')
         en.classList.add('hidden')
         language = 'RU'
-        updateLink()
     } else {
         en.classList.remove('hidden')
         ru.classList.add('hidden')
         language = 'EN'
-        updateLink()
     }
 }
 
-function changeLanguage() {
-  if (language === 'EN') {
-    language = 'RU'
-  } else {
-    language = 'EN'
-  }
-}
 
 //rules controller
 function updateLink() {
@@ -43,16 +35,12 @@ function updateLink() {
 
 //music controller
 const play = document.getElementById('play');
+const music = document.getElementById('music')
 
 play.onclick = () => {
     play.classList.toggle('on')
     play.classList.contains('on')? music.play() : music.pause()
 }
-
-const music = document.getElementById('music')
-
-
-
 
 
 //bets controller
@@ -276,7 +264,13 @@ layerChat.addEventListener('touchend', e => {
 
 
 
-  window.addEventListener('load', (event) => {
+
+
+
+
+
+
+window.addEventListener('load', (event) => {
     updateLink()
     switchLang()
-  })
+})

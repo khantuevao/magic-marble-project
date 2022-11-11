@@ -240,6 +240,7 @@ ul {
   -moz-transition: background-position 0.3s ease;
   font-size: 0.01em;
   float: left;
+  cursor: pointer;
 }
 
 #language-switch {
@@ -501,6 +502,8 @@ ul {
   -moz-transition: background-position 0.3s ease;
   font-size: 0.01em;
   float: left;
+  cursor: pointer;
+
 }
 
 #bet-type {
@@ -569,6 +572,7 @@ ul {
   justify-content: center;
   align-items: center;
   position: relative;
+  cursor: pointer;
 }
 
 .tick > div:last-child {
@@ -605,6 +609,7 @@ button {
   justify-content: center;
   align-items: center;
   padding: 1.2rem 0 1rem;
+  cursor: pointer;
 }
 
 /* Bets widescreen ver */
@@ -639,7 +644,7 @@ button {
 
   #bet span {
     top: 0.175rem;
-    left: 0.15rem;
+    left: 0.17rem;
   }
   
   #even {
@@ -651,7 +656,7 @@ button {
   }
   
   #bet-type:checked + #bet span {
-    left: 6.65rem;
+    left: 6.7rem;
   }
 
   #bet-ticks {

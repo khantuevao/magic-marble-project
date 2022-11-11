@@ -66,26 +66,61 @@ body {
 @media (min-width: 800px) {
   #left-side {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 2rem;
-    gap: 3rem;
-    background-color: #1c2258;
-    width: 6rem;
+    justify-content: center;
+    width: 5.5rem;
     font-size: 1.8rem;
     color: #d9d9d9;
     font-weight: 900;
+    position: relative;
   }
 
-  #left-side > div:first-child {
+  #menu-layer {
+    opacity: 0;
+    z-index: 6;
+    width: 12rem;
+    position: absolute;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  .closed {
+    transform: translateX(-10rem);
+  }
+
+  #menu {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: flex-end;
+    padding: 2rem 2rem;
+    background-color: #1c2258;
+    height: 100%;
+    position: absolute;
+    width: 12rem;
+    z-index: 5;
+    left: -10.5rem;
+    transition: 0.5s ease-in-out;
+  }
+
+  .opened {
+    transform: translateX(10.5rem);
+  }
+
+  #menu > div:first-child {
     background: none;
   }
 
-  #left-side > div {
+  #menu > div {
     width: 1.3rem;
     height: 1.3rem;
     border-radius: 2rem; 
-    background-color: #d9d9d9;   
+    background-color: #d9d9d9;  
+    transition: 0.5s ease-in-out; 
+    cursor: pointer;
+  }
+
+  #menu.opened > div {
+    transform: translateX(-10.5rem);
   }
 
   #main-side {

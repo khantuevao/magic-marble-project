@@ -332,3 +332,21 @@ layerChat.addEventListener("touchend", (e) => {
   touchEndY = e.changedTouches[0].screenY;
   checkDirection();
 });
+
+
+// Menu controller
+const menuLayer = document.getElementById('menu-layer')
+const menu = document.getElementById('menu')
+menuLayer.addEventListener('click', () => {
+  menuLayer.classList.add('closed')
+  menu.classList.add('opened')
+})
+
+window.addEventListener('click', ({ target }) => {
+  if (target !== menu && target !== menuLayer) {
+    menuLayer.classList.remove('closed')
+
+    menu.classList.remove('opened')
+  }
+});
+

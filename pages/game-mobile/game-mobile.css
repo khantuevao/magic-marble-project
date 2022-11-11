@@ -63,6 +63,10 @@ body {
   right: 0;
 }
 
+#menu-layer {
+  display: none;
+}
+
 @media (min-width: 800px) {
   #left-side {
     display: flex;
@@ -75,12 +79,14 @@ body {
   }
 
   #menu-layer {
+    display: flex;
     opacity: 0;
     z-index: 6;
     width: 12rem;
     position: absolute;
     height: 100%;
     cursor: pointer;
+    left: -6.5rem;
   }
 
   .closed {
@@ -142,7 +148,6 @@ body {
     margin-left: auto;
     width: 35%;
   }
-
 }
 
 /* Top layer */
@@ -177,6 +182,7 @@ body {
 #top-header {
   display: flex;
   gap: 0.8rem;
+  cursor: default;
 }
 
 .overlay {
@@ -411,12 +417,16 @@ ul {
 .name {
   font-weight: 900;
   font-size: 1rem;
+  cursor: default;
+
 }
 
 .role {
   font-size: 0.8rem;
   font-weight: 900;
   color: #3fa0bf;
+  cursor: default;
+
 }
 
 .score {
@@ -426,6 +436,8 @@ ul {
   justify-content: center;
   align-items: flex-start;
   margin-top: -0.5rem;
+  cursor: default;
+
 }
 
 .marbles {

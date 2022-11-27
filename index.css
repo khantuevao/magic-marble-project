@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Hubballi&display=swap');
+
 @font-face {
   font-family: SGL;
   src: url(./fonts/spacegrotesk/SpaceGrotesk-Light.otf);
@@ -63,6 +65,8 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-family: 'Hubballi';
+  font-size: 1.4rem;
 }
 
 #center-links {
@@ -278,9 +282,6 @@ video {
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-#text-over-video > p {
   text-align: center;
 }
 
@@ -289,9 +290,8 @@ video {
   font-family: SGL;
   border-radius: 5rem;
   padding: 1rem 4rem;
-  background-color: rgba(0, 0, 0, 70%);
+  background: radial-gradient(100.03% 140.18% at 0 85.53%,#f0f 0,#6d00cc 95.31%);
   color: white;
-  border: 1px solid rgba(0, 0, 0, 70%);
   text-decoration: none;
   margin-top: 1rem;
   min-width: 8rem;
@@ -299,13 +299,14 @@ video {
 }
 
 #text-over-video > a:hover {
-  border-color: white;
+  background: radial-gradient(30.03% 80.18% at 0 70.53%,#f0f 0,#6d00cc 95.31%);
 }
 
 #overview,
 #advantages,
 #utilities,
-#roadmap {
+#roadmap,
+#aboutus {
   line-height: 1.5;
 }
 
@@ -317,13 +318,29 @@ video {
   box-shadow: 0 -5rem 5rem 5rem black;
 }
 
+#aboutus {
+  z-index: 1;
+  color: white;
+  padding: 0 2rem 2rem;
+  margin-top: 1rem;
+  border-bottom: 1px solid #292524;
+}
+
 #overview > div {
+  font-family: SGB;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 10rem;
+}
+
+#aboutus > div {
   font-family: SGB;
   font-size: 2rem;
   margin-bottom: 2rem;
 }
 
-#overview > p {
+#overview > p,
+#aboutus > p {
   font-size: 1.2rem;
   font-family: SGL;
 }
@@ -404,6 +421,50 @@ li > div:last-child {
   font-size: 1.2rem;
 }
 
+#team {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+#team-left,
+#team-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  text-align: center;
+}
+
+#team-left > div,
+#team-right > div {
+  font-size: 2.5rem;
+  font-family: SGM;
+}
+
+#team-left > p,
+#team-right > p {
+  font-size: 1.5rem;
+  font-family: SGL;
+}
+
+#team-left-img,
+#team-right-img {
+  width: 15rem;
+  height: 15rem;
+  display: flex;
+  overflow: hidden;
+  border-radius: 10rem;
+  margin-bottom: 1rem;
+}
+
+#team-left-img > img,
+#team-right-img > img {
+  transform: scale(1.6);
+}
+
+
+
 /*Content wide-screen styling*/
 @media (min-width: 1200px) {
   #video-box {
@@ -416,6 +477,10 @@ li > div:last-child {
     top: 45%;
   }
 
+  #text-over-video > p {
+    font-size: 2rem;
+  }
+
   #overview {
     padding: 4rem 12rem 8rem;
     min-height: 70vh;
@@ -423,17 +488,22 @@ li > div:last-child {
 
   #advantages,
   #utilities,
-  #roadmap {
+  #roadmap,
+  #aboutus {
     padding: 8rem 12rem;
   }
 
+  
+
   #overview > div,
-  #advantages > div {
+  #advantages > div,
+  #aboutus > div {
     font-size: 3.5rem;
     margin-bottom: 2rem;
   }
 
-  #overview > p {
+  #overview > p,
+  #aboutus > p {
     font-size: 1.6rem;
   }
 
@@ -481,7 +551,12 @@ li > div:last-child {
 
   #text-over-video {
     font-size: 2rem;
-    top: 40%;
+    top: 45%;
+    width: 100%;
+  }
+
+  #text-over-video > p {
+    font-size: 1.2rem;
   }
 
   #text-over-video > a {
@@ -491,5 +566,39 @@ li > div:last-child {
 
   #roadmap {
     padding-bottom: 5rem;
+  }
+
+  #overview > div {
+    margin-top: 0rem;
+  }
+
+  #team {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #team-left > div,
+  #team-right > div {
+    font-size: 1.8rem;
+  }
+
+  #team-left > p,
+  #team-right > p {
+    font-size: 1.2rem;
+  }
+
+  #team-left-img,
+  #team-right-img {
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    overflow: hidden;
+    border-radius: 10rem;
+    margin-bottom: 1rem;
+  }
+
+  #team-left-img > img,
+  #team-right-img > img {
+    transform: scale(1.6);
   }
 }

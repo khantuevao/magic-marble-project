@@ -576,6 +576,8 @@ li > div:last-child {
   #team {
     flex-direction: column;
     align-items: center;
+    margin-top: 4rem;
+
   }
 
   #team-left > div,

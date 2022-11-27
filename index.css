@@ -425,6 +425,7 @@ li > div:last-child {
   display: flex;
   width: 100%;
   justify-content: space-evenly;
+  margin-top: 6rem;
 }
 
 #team-left,

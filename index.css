@@ -228,10 +228,9 @@ footer {
   align-items: center;
   justify-content: space-evenly;
   font-family: SGM;
-  width: 4rem;
+  width: fit-content;
   line-height: 0.8;
   text-align: center;
-  line-height: 1.2;
 }
 
 /*Footer wide-screen styling*/

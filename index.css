@@ -227,7 +227,7 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  font-family: SGM;
+  font-family: SGB;
   width: fit-content;
   line-height: 0.8;
   text-align: center;
@@ -425,9 +425,18 @@ li > div:last-child {
 
 #team {
   display: flex;
+  flex-direction: column;
   width: 100%;
-  justify-content: space-evenly;
+  align-items: center;
   margin-top: 6rem;
+  gap: 4rem;
+}
+
+#team-top,
+#team-bot {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
 }
 
 #team-left,
@@ -435,8 +444,9 @@ li > div:last-child {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50%;
   text-align: center;
+  width: 50%;
+
 }
 
 #team-left > div,
@@ -583,12 +593,23 @@ li > div:last-child {
     flex-direction: column;
     align-items: center;
     margin-top: 4rem;
+    gap: 2rem;
+  }
+
+  #team-top,
+  #team-bot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
 
   }
 
   #team-left > div,
   #team-right > div {
     font-size: 1.8rem;
+    display: flex;
+    
   }
 
   #team-left > p,

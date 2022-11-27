@@ -288,7 +288,7 @@ video {
 }
 
 #text-over-video > div {
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
 }
 
 #text-over-video > a {
@@ -299,7 +299,7 @@ video {
   background: radial-gradient(100.03% 140.18% at 0 85.53%,#f0f 0,#6d00cc 95.31%);
   color: white;
   text-decoration: none;
-  margin-top: 6rem;
+  margin-top: 2rem;
   min-width: 8rem;
   text-align: center;
 }
@@ -307,7 +307,8 @@ video {
 
 
 #text-over-video > p {
-  margin: 0;
+  font-family: SGL;
+  font-size: 1.2rem;
 }
 
 #text-over-video > a:hover {

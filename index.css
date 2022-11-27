@@ -56,9 +56,10 @@ header {
   text-decoration: none;
 }
 
-#company-header > img {
+#company-logo {
   width: 3rem;
   border-radius: 10rem;
+  background: radial-gradient(100.03% 140.18% at 0 85.53%,#f0f 0,#6d00cc 95.31%);
 }
 
 #company-name {
@@ -124,12 +125,14 @@ header {
   transition: all 0.2s ease-in-out;
 }
 
-#right-links > a:hover {
-  box-shadow: 0 5px 15px rgba(213, 209, 215, 0.4);
-}
+
 
 #right-links > a:last-child {
-  background-color: #fafaf9;
+  background: radial-gradient(100.03% 140.18% at 0 85.53%,#f0f 0,#6d00cc 95.31%);
+}
+
+#right-links > a:last-child:hover {
+  background: radial-gradient(30.03% 80.18% at 0 70.53%,#f0f 0,#6d00cc 95.31%);
 }
 
 #right-links > a {
@@ -138,9 +141,6 @@ header {
   font-size: 1rem;
 }
 
-#right-links > a:last-child {
-  color: black;
-}
 
 
 
@@ -226,10 +226,12 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-family: SGL;
+  justify-content: space-evenly;
+  font-family: SGM;
   width: 4rem;
   line-height: 0.8;
+  text-align: center;
+  line-height: 1.2;
 }
 
 /*Footer wide-screen styling*/
@@ -289,7 +291,7 @@ video {
 #text-over-video > a {
   font-size: 1.8rem;
   font-family: SGB;
-  border-radius: 5rem;
+  border-radius: 0.8rem;
   padding: 1rem 4rem;
   background: radial-gradient(100.03% 140.18% at 0 85.53%,#f0f 0,#6d00cc 95.31%);
   color: white;
@@ -570,8 +572,12 @@ li > div:last-child {
     padding-bottom: 5rem;
   }
 
-  #overview > div {
-    margin-top: 0rem;
+  #overview > div:first-child,
+  #advantages > div:first-child,
+  #utilities > div:first-child,
+  #roadmap > div:first-child,
+  #aboutus > div:first-child {
+    margin-top: 4rem;
   }
 
   #team {

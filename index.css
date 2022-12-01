@@ -418,6 +418,23 @@ li > div:last-child {
   padding: 1rem;
 }
 
+#utilities > a {
+  font-size: 1.8rem;
+  font-family: SGB;
+  border-radius: 0.8rem;
+  padding: 1rem 4rem;
+  background: radial-gradient(100.03% 140.18% at 0 85.53%,#f0f 0,#6d00cc 95.31%);
+  color: white;
+  text-decoration: none;
+  margin-top: 2rem;
+  min-width: 8rem;
+  text-align: center;
+}
+
+#utilities > a:hover {
+  background: radial-gradient(30.03% 80.18% at 0 70.53%,#f0f 0,#6d00cc 95.31%);
+}
+
 #roadmap {
   color: black;
   background-color: #d1d5db;

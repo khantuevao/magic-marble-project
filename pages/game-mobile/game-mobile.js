@@ -10,7 +10,7 @@ window.addEventListener("load", (event) => {
 // Display info
 const nameOne = document.querySelector(".name.one");
 const roleOne = document.querySelector(".role.one");
-const scoreOne = document.querySelector(".score.one");
+const scoreOne = document.getElementById("score-num-one");
 const marblesOne = document.querySelector(".marbles.one");
 // Bet values (can be accessed with betType.value & betAmount.value)
 const betType = document.getElementById("bet-type");
@@ -20,7 +20,7 @@ const betAmount = document.getElementById("bet-amount");
 // Display info
 const nameTwo = document.querySelector(".name.two");
 const roleTwo = document.querySelector(".role.two");
-const scoreTwo = document.querySelector(".score.two");
+const scoreTwo = document.getElementById("score-num-two");
 const marblesTwo = document.querySelector(".marbles.two");
 
 // CONTROLLERS
@@ -350,3 +350,344 @@ window.addEventListener('click', ({ target }) => {
   }
 });
 
+
+
+
+
+
+// GAME LOGIC
+
+const Player = (name) => {
+  let score = 10;
+  let bet;
+  let role;
+  let ready = false;
+  let choice;
+
+  return { name, score, bet, role, ready, choice };
+};
+
+let playerOne = Player('Player')
+playerOne.role = 'guesser'
+let playerTwo = Player('A.I.')
+playerTwo.role = 'hider'
+
+const layerBet = document.getElementById('layer-bet')
+
+const submitBtn = document.getElementById('submit')
+submitBtn.addEventListener('click', () => {
+  layerBet.classList.add('hidden')
+  setTimeout(() => {
+    layerBet.classList.remove('hidden')
+    placeBets()
+    playRound()
+    runAnimation()
+  }, 2000);
+})
+
+function playRound() {
+  resolveTurn();
+  renderScore();
+  renderMarbles();
+  renderBetTicks()
+
+  if (playerOne.score === 0) {
+    //lost
+  } else if (playerTwo.score === 0) {
+    //won
+    doConfetti()
+  } else {
+    //default
+    changeRoles();
+    renderRoles();
+  }
+}
+
+function renderRoles() {
+  if (language === 'EN' && playerOne.role === 'guesser') {
+    roleOne.innerHTML = 'guesser';
+    roleTwo.innerHTML = 'hider';
+  } else if (language === 'EN' && playerOne.role === 'hider') {
+    roleOne.innerHTML = 'hider';
+    roleTwo.innerHTML = 'guesser';
+  } else if (language === 'RU' && playerOne.role === 'guesser') {
+    roleOne.innerHTML = 'Угадывающий'
+    roleTwo.innerHTML = 'Загадывающий'
+  } else if (language === 'RU' && playerOne.role === 'hider') {
+    roleOne.innerHTML = 'Загадывающий'
+    roleTwo.innerHTML = 'Угадывающий'
+  }
+}
+
+function changeRoles() {
+  if (playerOne.score === 1) {
+    playerOne.role = "guesser";
+    playerTwo.role = "hider";
+  } else if (playerTwo.score === 1) {
+    playerOne.role = "hider";
+    playerTwo.role = "guesser";
+  } else if (playerOne.role === "hider") {
+    playerOne.role = "guesser";
+    playerTwo.role = "hider";
+  } else if (playerOne.role === "guesser") {
+    playerOne.role = "hider";
+    playerTwo.role = "guesser";
+  }
+}
+
+function renderScore() {
+  scoreOne.innerHTML = `${playerOne.score}`;
+  scoreTwo.innerHTML = `${playerTwo.score}`;
+}
+
+const tickmarks = document.getElementById('tickmarks')
+const betTicks = document.getElementById('bet-ticks')
+
+function renderBetTicks() {
+  let minAmount
+  if (playerOne.score > playerTwo.score) {
+    minAmount = playerTwo.score
+  } else {
+    minAmount = playerOne.score
+  }
+
+  document.querySelector('.tick.two').classList.remove('none')
+  document.querySelector('.tick.three').classList.remove('none')
+  document.querySelector('.tick.four').classList.remove('none')
+  document.querySelector('.tick.five').classList.remove('none')
+  document.querySelector('.tick.six').classList.remove('none')
+  document.querySelector('.tick.seven').classList.remove('none')
+  document.querySelector('.tick.eight').classList.remove('none')
+  document.querySelector('.tick.nine').classList.remove('none')
+  document.querySelector('.tick.ten').classList.remove('none')
+
+
+  switch (minAmount) {
+    case 1:
+      document.querySelector('.tick.two').classList.add('none')
+      document.querySelector('.tick.three').classList.add('none')
+      document.querySelector('.tick.four').classList.add('none')
+      document.querySelector('.tick.five').classList.add('none')
+      document.querySelector('.tick.six').classList.add('none')
+      document.querySelector('.tick.seven').classList.add('none')
+      document.querySelector('.tick.eight').classList.add('none')
+      document.querySelector('.tick.nine').classList.add('none')
+      document.querySelector('.tick.ten').classList.add('none')
+      break;
+    case 2:
+      document.querySelector('.tick.three').classList.add('none')
+      document.querySelector('.tick.four').classList.add('none')
+      document.querySelector('.tick.five').classList.add('none')
+      document.querySelector('.tick.six').classList.add('none')
+      document.querySelector('.tick.seven').classList.add('none')
+      document.querySelector('.tick.eight').classList.add('none')
+      document.querySelector('.tick.nine').classList.add('none')
+      document.querySelector('.tick.ten').classList.add('none')
+      break;
+    case 3:
+      document.querySelector('.tick.four').classList.add('none')
+      document.querySelector('.tick.five').classList.add('none')
+      document.querySelector('.tick.six').classList.add('none')
+      document.querySelector('.tick.seven').classList.add('none')
+      document.querySelector('.tick.eight').classList.add('none')
+      document.querySelector('.tick.nine').classList.add('none')
+      document.querySelector('.tick.ten').classList.add('none')
+      break;
+    case 4:
+      document.querySelector('.tick.five').classList.add('none')
+      document.querySelector('.tick.six').classList.add('none')
+      document.querySelector('.tick.seven').classList.add('none')
+      document.querySelector('.tick.eight').classList.add('none')
+      document.querySelector('.tick.nine').classList.add('none')
+      document.querySelector('.tick.ten').classList.add('none')
+      break;
+    case 5:
+      document.querySelector('.tick.six').classList.add('none')
+      document.querySelector('.tick.seven').classList.add('none')
+      document.querySelector('.tick.eight').classList.add('none')
+      document.querySelector('.tick.nine').classList.add('none')
+      document.querySelector('.tick.ten').classList.add('none')
+      break;
+    case 6:
+      document.querySelector('.tick.seven').classList.add('none')
+      document.querySelector('.tick.eight').classList.add('none')
+      document.querySelector('.tick.nine').classList.add('none')
+      document.querySelector('.tick.ten').classList.add('none')
+      break;
+    case 7:
+      document.querySelector('.tick.eight').classList.add('none')
+      document.querySelector('.tick.nine').classList.add('none')
+      document.querySelector('.tick.ten').classList.add('none')
+      break;
+    case 8:
+      document.querySelector('.tick.nine').classList.add('none')
+      document.querySelector('.tick.ten').classList.add('none')
+      break;
+    case 9:
+      document.querySelector('.tick.ten').classList.add('none')
+      break;
+    case 10:
+      break;
+  }
+}
+
+function placeBets() {
+  playerOne.choice = betType.value
+  playerOne.bet = Number(betAmount.value)
+
+  function aiBet(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  if (playerTwo.score > playerOne.score) {
+    playerTwo.bet = aiBet(1, playerOne.score);
+  } else {
+    playerTwo.bet = aiBet(1, playerTwo.score)
+  }
+
+  function aiChoice() {
+    let result;
+    let randomNum = aiBet(1, 2);
+    if (randomNum === 1) {
+      result = 'odd';
+    } else {
+      result = 'even';
+    }
+    return result;
+  }
+
+  playerTwo.choice = aiChoice();  
+}
+
+let scoreDiffOne
+let scoreDiffTwo
+
+function resolveTurn() {
+  let previousScoreOne = playerOne.score
+  let previousScoreTwo = playerTwo.score
+  if (playerOne.role === "guesser") {
+    if (playerOne.choice === playerTwo.choice) {
+      playerOne.score += Number(playerOne.bet);
+      playerTwo.score -= Number(playerOne.bet);
+      wonAmount = playerOne.bet;
+    } else {
+      playerOne.score -= Number(playerOne.bet);
+      playerTwo.score += Number(playerOne.bet);
+      wonAmount = playerOne.bet;
+    }
+  } else if (playerOne.role === "hider") {
+    if (playerOne.choice === playerTwo.choice) {
+      playerOne.score -= Number(playerTwo.bet);
+      playerTwo.score += Number(playerTwo.bet);
+      wonAmount = playerTwo.bet;
+    } else {
+      playerOne.score += Number(playerTwo.bet);
+      playerTwo.score -= Number(playerTwo.bet);
+      wonAmount = playerTwo.bet;
+    }
+  }
+  let currentScoreOne = playerOne.score
+  let currentScoreTwo = playerTwo.score
+  if (currentScoreOne > previousScoreOne) {
+    scoreDiffOne = `+${currentScoreOne - previousScoreOne}`
+    scoreDiffTwo = `${currentScoreTwo - previousScoreTwo}`
+  } else {
+    scoreDiffOne = `${currentScoreOne - previousScoreOne}`
+    scoreDiffTwo = `+${currentScoreTwo - previousScoreTwo}`
+  }
+}
+
+const scoreDifferenceOne = document.getElementById("score-difference-one");
+const scoreDifferenceTwo = document.getElementById("score-difference-two");
+
+function checkPositive() {
+  scoreDifferenceOne.classList.remove('positive')
+  scoreDifferenceOne.classList.remove('negative')
+  if (scoreDiffOne < 0) {
+    scoreDifferenceOne.classList.add("negative");
+  } else {
+    scoreDifferenceOne.classList.add("positive");
+  }
+  scoreDifferenceTwo.classList.remove("positive")
+  scoreDifferenceTwo.classList.remove("negative")
+  if (scoreDiffTwo < 0) {
+    scoreDifferenceTwo.classList.add("negative");
+  } else {
+    scoreDifferenceTwo.classList.add("positive");
+  }
+}
+
+function runAnimation() {
+  checkPositive()
+  scoreDifferenceOne.innerHTML = `${scoreDiffOne}`
+  scoreDifferenceOne.classList.remove("hidden");
+  scoreDifferenceOne.classList.add("smalltobig");
+  scoreDifferenceTwo.innerHTML = `${scoreDiffTwo}`
+  scoreDifferenceTwo.classList.remove("hidden");
+  scoreDifferenceTwo.classList.add("smalltobig");
+  setTimeout(() => {
+    scoreDifferenceOne.classList.remove("smalltobig");
+    scoreDifferenceOne.classList.add("hidden");
+    scoreDifferenceTwo.classList.remove("smalltobig");
+    scoreDifferenceTwo.classList.add("hidden");
+  }, "4000");
+}
+
+
+//confetti
+const Confettiful = function (el) {
+  this.el = el;
+  this.containerEl = null;
+  this.confettiFrequency = 3;
+  this.confettiColors = ["#fce18a", "#ff726d", "#b48def", "#f4306d"];
+  this.confettiAnimations = ["slow", "medium", "fast"];
+  this._setupElements();
+  this._renderConfetti();
+};
+
+Confettiful.prototype._setupElements = function () {
+  const containerEl = document.createElement("div");
+  const elPosition = this.el.style.position;
+  if (elPosition !== "relative" || elPosition !== "absolute") {
+    this.el.style.position = "relative";
+  }
+  containerEl.classList.add("confetti-container");
+  this.el.appendChild(containerEl);
+  this.containerEl = containerEl;
+};
+
+Confettiful.prototype._renderConfetti = function () {
+  this.confettiInterval = setInterval(() => {
+    const confettiEl = document.createElement("div");
+    const confettiSize = Math.floor(Math.random() * 3) + 7 + "px";
+    const confettiBackground =
+      this.confettiColors[
+        Math.floor(Math.random() * this.confettiColors.length)
+      ];
+    const confettiLeft =
+      Math.floor(Math.random() * this.el.offsetWidth) + "px";
+    const confettiAnimation =
+      this.confettiAnimations[
+        Math.floor(Math.random() * this.confettiAnimations.length)
+      ];
+    confettiEl.classList.add(
+      "confetti",
+      "confetti--animation-" + confettiAnimation
+    );
+    confettiEl.style.left = confettiLeft;
+    confettiEl.style.width = confettiSize;
+    confettiEl.style.height = confettiSize;
+    confettiEl.style.backgroundColor = confettiBackground;
+
+    confettiEl.removeTimeout = setTimeout(function () {
+      confettiEl.parentNode.removeChild(confettiEl);
+    }, 3000);
+    this.containerEl.appendChild(confettiEl);
+  }, 25);
+};
+
+function doConfetti() {
+  window.confettiful = new Confettiful(document.body);
+}

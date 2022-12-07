@@ -376,13 +376,10 @@ const layerBet = document.getElementById('layer-bet')
 
 const submitBtn = document.getElementById('submit')
 submitBtn.addEventListener('click', () => {
-  layerBet.classList.add('hidden')
-  setTimeout(() => {
     layerBet.classList.remove('hidden')
     placeBets()
     playRound()
     runAnimation()
-  }, 2000);
 })
 
 function playRound() {
@@ -463,6 +460,17 @@ function renderBetTicks() {
 
 
   switch (minAmount) {
+    case 0:
+      document.querySelector('.tick.one').classList.add('none')
+      document.querySelector('.tick.two').classList.add('none')
+      document.querySelector('.tick.three').classList.add('none')
+      document.querySelector('.tick.four').classList.add('none')
+      document.querySelector('.tick.five').classList.add('none')
+      document.querySelector('.tick.six').classList.add('none')
+      document.querySelector('.tick.seven').classList.add('none')
+      document.querySelector('.tick.eight').classList.add('none')
+      document.querySelector('.tick.nine').classList.add('none')
+      document.querySelector('.tick.ten').classList.add('none')
     case 1:
       document.querySelector('.tick.two').classList.add('none')
       document.querySelector('.tick.three').classList.add('none')
@@ -563,6 +571,7 @@ function placeBets() {
 
 let scoreDiffOne
 let scoreDiffTwo
+const animationName = document.getElementById('animation-name')
 
 function resolveTurn() {
   let previousScoreOne = playerOne.score
@@ -593,9 +602,11 @@ function resolveTurn() {
   if (currentScoreOne > previousScoreOne) {
     scoreDiffOne = `+${currentScoreOne - previousScoreOne}`
     scoreDiffTwo = `${currentScoreTwo - previousScoreTwo}`
+    animationName.innerHTML = `You won ${currentScoreOne - previousScoreOne} marbles this turn 👍`
   } else {
     scoreDiffOne = `${currentScoreOne - previousScoreOne}`
     scoreDiffTwo = `+${currentScoreTwo - previousScoreTwo}`
+    animationName.innerHTML = `You lost ${Math.abs(currentScoreOne - previousScoreOne)} marbles this turn`
   }
 }
 
@@ -619,6 +630,7 @@ function checkPositive() {
   }
 }
 
+
 function runAnimation() {
   checkPositive()
   scoreDifferenceOne.innerHTML = `${scoreDiffOne}`
@@ -627,11 +639,15 @@ function runAnimation() {
   scoreDifferenceTwo.innerHTML = `${scoreDiffTwo}`
   scoreDifferenceTwo.classList.remove("hidden");
   scoreDifferenceTwo.classList.add("smalltobig");
+  animationName.classList.remove('hidden')
+  animationName.classList.add('bottotop')
   setTimeout(() => {
     scoreDifferenceOne.classList.remove("smalltobig");
     scoreDifferenceOne.classList.add("hidden");
     scoreDifferenceTwo.classList.remove("smalltobig");
     scoreDifferenceTwo.classList.add("hidden");
+    animationName.classList.remove('bottotop')
+    animationName.classList.add('hidden')
   }, "4000");
 }
 

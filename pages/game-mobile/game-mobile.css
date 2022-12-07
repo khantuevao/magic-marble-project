@@ -550,7 +550,7 @@ ul {
   border-radius: 0.25rem;
   padding: 0.2rem;
   position: absolute;
-  width: 9rem;
+  width: 10rem;
   height: fit-content;
   top: 6rem;
   font-size: 1rem;
@@ -1196,9 +1196,13 @@ button {
   font-size: 2.5rem;
   font-family: Inter B;
   font-weight: 900;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
   border: 4px solid orangered;
   background-color: rgb(224, 224, 37);
   border-radius: 1rem;
@@ -1209,6 +1213,16 @@ button {
 #popup-lose {
   border: 4px solid white;
   background-color: rgba(128, 128, 128, 0.87);
+}
+
+.toptobot {
+  animation: toptobot 0.5s ease-in-out;
+}
+
+@keyframes toptobot {
+  from {  transform: scale(0); opacity: 0 }
+  80% { transform: scale(1.2); opacity: 1 }
+  to { transform: scale(1); opacity: 1 }
 }
 
 @media (max-width: 1000px) {

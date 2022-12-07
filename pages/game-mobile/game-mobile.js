@@ -392,12 +392,16 @@ function playRound() {
     //lost
     setTimeout(() => {
       doAnimationLose()
+
     }, 2000);
+
   } else if (playerTwo.score === 0) {
     //won
     setTimeout(() => {
       doAnimationWon()
+
     }, 2000);
+
   } else {
     //default
     changeRoles();
@@ -727,11 +731,16 @@ function doAnimationWon() {
   mainSide.classList.add("blur");
   const popupWin = document.getElementById("popup-win");
   popupWin.classList.remove("none");
+  popupWin.classList.add('toptobot')
+
   mainSide.confettiful = new Confettiful(document.body);
+
 }
 
 function doAnimationLose() {
   mainSide.classList.add("blur");
   const popupLose = document.getElementById("popup-lose");
   popupLose.classList.remove("none");
+  popupLose.classList.add('toptobot')
+
 }

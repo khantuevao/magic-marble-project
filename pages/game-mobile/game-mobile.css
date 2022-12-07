@@ -25,6 +25,7 @@ body {
   margin: 0;
   font-family: Inter;
   display: flex;
+  position: relative;
 }
 
 #left-side {
@@ -417,7 +418,10 @@ ul {
 
 .info {
   display: flex;
+  align-items: center;
   gap: 0.5rem;
+  height: fit-content;
+  margin-top: -0.3rem;
 }
 
 .name {
@@ -442,10 +446,9 @@ ul {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin-top: -0.5rem;
+  margin-top: -0.3rem;
   cursor: default;
   font-family: Inter B;
-
 }
 
 .marbles {
@@ -483,7 +486,6 @@ ul {
 
   .info {
     display: flex;
-    gap: 0.5rem;
     margin: auto 0;
     align-items: center;
   }
@@ -527,8 +529,8 @@ ul {
 }
 
 #img-cont1, #img-cont2 {
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 10rem;
   overflow: hidden;
 
@@ -579,7 +581,7 @@ ul {
   top: 0;
   right: 0;
   bottom: 0;
-  left: 6rem;
+  left: 7rem;
   margin: auto;
   width: fit-content;
   height: fit-content;
@@ -601,6 +603,21 @@ ul {
   80% { transform: scale(1); opacity: 1 }
   85% { transform: scale(1.2); opacity: 1 }
   to { transform: scale(0); opacity: 0 }
+}
+
+@media (max-width: 1000px) {
+  #score-difference-one, #score-difference-two {
+    top: 4rem;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  #animation-name {
+    width: 8rem;
+    top: 5rem;
+    font-size: 0.8rem;
+  }
 }
 
 
@@ -1166,4 +1183,38 @@ button {
 }
 .confetti--animation-fast {
   animation: confetti-fast 1.25s linear 1 forwards;
+}
+
+
+.blur {
+  filter: blur(4px);
+}
+  
+#popup-win, #popup-lose {
+  position: absolute;
+  color: rgb(0, 0, 80);
+  font-size: 2.5rem;
+  font-family: Inter B;
+  font-weight: 900;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border: 4px solid orangered;
+  background-color: rgb(224, 224, 37);
+  border-radius: 1rem;
+  padding: 0 4rem;
+  text-align: center;
+}
+
+#popup-lose {
+  border: 4px solid white;
+  background-color: rgba(128, 128, 128, 0.87);
+}
+
+@media (max-width: 1000px) {
+  #popup-win, #popup-lose {
+    font-size: 1.5rem;
+    width: 80%;
+    padding: 0 1rem;
+  }
 }

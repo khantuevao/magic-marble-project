@@ -376,6 +376,7 @@ const layerBet = document.getElementById('layer-bet')
 
 const submitBtn = document.getElementById('submit')
 submitBtn.addEventListener('click', () => {
+    if (playerOne.score === 0 || playerTwo.score === 0) return
     layerBet.classList.remove('hidden')
     placeBets()
     playRound()
@@ -386,17 +387,23 @@ function playRound() {
   resolveTurn();
   renderScore();
   renderMarbles();
-  renderBetTicks()
 
   if (playerOne.score === 0) {
     //lost
+    setTimeout(() => {
+      doAnimationLose()
+    }, 2000);
   } else if (playerTwo.score === 0) {
     //won
-    doConfetti()
+    setTimeout(() => {
+      doAnimationWon()
+    }, 2000);
   } else {
     //default
     changeRoles();
     renderRoles();
+    renderBetTicks()
+
   }
 }
 
@@ -441,6 +448,12 @@ const tickmarks = document.getElementById('tickmarks')
 const betTicks = document.getElementById('bet-ticks')
 
 function renderBetTicks() {
+  betTicks.classList.remove('hidden')
+
+  if (playerOne.role === 'hider') {
+    betTicks.classList.add('hidden')
+  }
+
   let minAmount
   if (playerOne.score > playerTwo.score) {
     minAmount = playerTwo.score
@@ -706,4 +719,19 @@ Confettiful.prototype._renderConfetti = function () {
 
 function doConfetti() {
   window.confettiful = new Confettiful(document.body);
+}
+
+const mainSide = document.getElementById("main-side");
+
+function doAnimationWon() {
+  mainSide.classList.add("blur");
+  const popupWin = document.getElementById("popup-win");
+  popupWin.classList.remove("none");
+  mainSide.confettiful = new Confettiful(document.body);
+}
+
+function doAnimationLose() {
+  mainSide.classList.add("blur");
+  const popupLose = document.getElementById("popup-lose");
+  popupLose.classList.remove("none");
 }

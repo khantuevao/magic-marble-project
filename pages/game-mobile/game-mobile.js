@@ -407,7 +407,8 @@ function playRound() {
     changeRoles();
     renderRoles();
     renderBetTicks()
-
+    betAmount.value = 1;
+    tickOne.click();
   }
 }
 
